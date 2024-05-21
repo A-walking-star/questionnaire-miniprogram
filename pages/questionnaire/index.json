@@ -1,0 +1,11 @@
+{
+  "navigationBarBackgroundColor": "#f9f9f9",
+  "usingComponents": {
+    "t-button": "tdesign-miniprogram/button/button",
+    "radio-card": "/components/radio-card/radio-card",
+    "text-card": "/components/text-card/text-card",
+    "slider-card": "/components/slider-card/slider-card",
+    "rate-card": "/components/rate-card/rate-card",
+    "date-time-picker-card": "/components/date-time-picker-card/date-time-picker-card"
+  }
+}

@@ -1,0 +1,7 @@
+<view>
+  <t-cell title="{{idx?idx+'.':''}}{{value.title}}" required="{{value.required}}">
+    <t-icon wx:if="{{mode==0}}" slot="note" name="{{delIcon}}" size="48rpx" catch:tap="del" />
+  </t-cell>
+  <t-rate style="margin: 20rpx 32rpx;" value="{{optionValue}}" count="{{value.value}}" catchchange="{{mode!=2?'onChange':''}}" disabled="{{mode===0}}" />
+  <view style="height: 20rpx;" />
+</view>

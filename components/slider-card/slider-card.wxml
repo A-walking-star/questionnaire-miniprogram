@@ -1,0 +1,11 @@
+<view>
+  <t-cell title="{{idx?idx+'.':''}}{{value.title}}" required="{{value.required}}">
+    <t-icon wx:if="{{mode==0}}" slot="note" name="{{delIcon}}" size="48rpx" catch:tap="del" />
+  </t-cell>
+  <t-slider show-extreme-value label="${value}" value="{{optionValue}}" marks="{{marks}}" max="{{value.max}}" min="{{value.min}}" disabled="{{mode===0}}" catch:change="{{mode!=2?'onChange':''}}" />
+  <view class="flex" wx:if="{{value.maxText || value.minText}}">
+    <view>{{value.minText}}</view>
+    <view>{{value.maxText}}</view>
+  </view>
+  <view style="height: 20rpx;" />
+</view>

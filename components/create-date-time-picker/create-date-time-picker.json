@@ -1,0 +1,11 @@
+{
+  "component": true,
+  "usingComponents": {
+    "t-textarea": "tdesign-miniprogram/textarea/textarea",
+    "t-button": "tdesign-miniprogram/button/button",
+    "t-cell": "tdesign-miniprogram/cell/cell",
+    "t-switch": "tdesign-miniprogram/switch/switch",
+    "t-picker": "tdesign-miniprogram/picker/picker",
+    "t-picker-item": "tdesign-miniprogram/picker-item/picker-item"
+  }
+}

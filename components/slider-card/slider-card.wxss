@@ -1,0 +1,10 @@
+page{
+  background-color: #ffffff;
+}
+
+.flex{
+  font-size: 28rpx;
+  margin: 20rpx 32rpx 10rpx 32rpx;
+  display: flex;
+  justify-content: space-between;
+}

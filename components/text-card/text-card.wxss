@@ -1,0 +1,11 @@
+page{
+  background-color: #ffffff;
+}
+.input{
+  height: 100px;
+  margin: 0 32rpx 32rpx 32rpx;
+  --td-input-vertical-padding: 20rpx;
+  border: 2px solid;
+  border-color: #f0f0f0;
+  border-radius: 10rpx;
+}

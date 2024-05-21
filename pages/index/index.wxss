@@ -1,0 +1,64 @@
+:read-only{
+  --td-grid-item-image-middle-width: 50rpx;
+  --td-bg-color-secondarycontainer: transparent;
+  --td-image-round-radius: 0;
+}
+page{
+  background-color: #EAF0FB;
+}
+.custom-navbar{
+  --td-navbar-color: var(--theme-color, #437dd4);
+  --td-navbar-bg-color: var(--theme-bg-color, #EAF0FB);
+  --td-navbar-title-font-size: 32rpx;
+}
+
+.history-box{
+  margin: 32rpx;
+}
+
+.history-box .history{
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 20rpx;
+  overflow: hidden;
+  padding: 32rpx;
+  min-height: 84rpx;
+  margin-bottom: 20rpx;
+}
+
+.history-box .history .title{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+  width: calc(100% - 32rpx - 96rpx - 36rpx);
+}
+.history-box .history .title .date{
+  font-size: 24rpx;
+  color: #999999;
+  margin-top: 8rpx;
+}
+.history-box .history .num{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+.history-box .history .num > view:nth-child(1){
+  color: #437dd4;
+  font-size: 34rpx;
+  font-weight: 800;
+}
+.history-box .history .num > view:nth-child(2){
+  color: #999999;
+  font-size: 24rpx;
+  font-weight: 800;
+  margin-top: 8rpx;
+}
+
+.divider{
+  min-height: 84rpx;
+}

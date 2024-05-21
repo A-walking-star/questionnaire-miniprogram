@@ -1,0 +1,20 @@
+page{
+  background-color: #f9f9f9;
+}
+
+.content{
+  width: calc(100vw - 64rpx);
+  margin: 32rpx;
+}
+.list{
+  margin-top: 30rpx;
+  --td-cell-title-font-size: 30rpx;
+}
+.radius-20{
+  border-radius: 20rpx;
+  overflow: hidden;
+}
+
+.shadow {
+  box-shadow: 0 0 30rpx 0 rgba(0, 0, 0, 0.1);
+}

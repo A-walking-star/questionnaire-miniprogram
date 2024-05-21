@@ -1,0 +1,29 @@
+
+.title{
+  padding: 10rpx 32rpx;
+  font-size: 24rpx;
+}
+
+.option{
+  padding: 0 32rpx;
+  background-color: #ffffff;
+  --td-input-vertical-padding: 32rpx 0;
+}
+.option .add{
+  display: flex;
+  align-items: center;
+  padding: 32rpx 0;
+  color: #0052d9;
+}
+
+.setup{
+  background-color: #ffffff;
+}
+
+.btn{
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  width: calc(100vw - 64rpx);
+  margin: 32rpx;
+}

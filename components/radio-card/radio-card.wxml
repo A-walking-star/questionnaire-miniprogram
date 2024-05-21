@@ -1,0 +1,11 @@
+<view>
+  <t-cell title="{{idx?idx+'.':''}}{{value.title}}" required="{{value.required}}">
+    <t-icon wx:if="{{mode==0}}" slot="note" name="{{delIcon}}" size="48rpx" catch:tap="del" />
+  </t-cell>
+  <t-radio-group wx:if="{{value.isSingleChoice}}" catch:change="onChange">
+    <t-radio wx:for="{{value.list}}" label="{{item.label}}" value="{{item.value}}" checked="{{item.value == optionValue}}" readonly="{{mode!==1}}" />
+  </t-radio-group>
+  <t-checkbox-group wx:else catch:change="onChange" value="{{optionValue}}">
+    <t-checkbox wx:for="{{value.list}}" label="{{item.label}}" value="{{item.value}}" checked="{{mode===2?item.checked:''}}" icon="rectangle" readonly="{{mode!==1}}" />
+  </t-checkbox-group>
+</view>

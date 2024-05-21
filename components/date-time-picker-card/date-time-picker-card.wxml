@@ -1,0 +1,40 @@
+<view>
+  <t-cell title="{{idx?idx+'.':''}}{{value.title}}" required="{{value.required}}">
+    <t-icon wx:if="{{mode==0}}" slot="note" name="{{delIcon}}" size="48rpx" catch:tap="del" />
+  </t-cell>
+  <t-cell
+    title="选择日期"
+    note="{{optionValue || ''}}"
+    arrow="{{mode==1}}"
+    data-type="visible"
+    data-value="{{true}}"
+    catchtap="{{mode===1?'changeData':''}}"
+  />
+  <wxs module="_">
+    function getFormat(type) {
+      switch(type){
+        case 'minute':
+          return 'YYYY-MM-DD HH:mm';
+        case 'date':
+          return 'YYYY-MM-DD';
+        case 'month':
+          return 'YYYY-MM';
+        default:
+          return 'YYYY-MM-DD HH:mm';
+      }
+    }
+    module.exports = getFormat;
+  </wxs>
+  <t-date-time-picker
+    title="选择日期"
+    visible="{{visible}}"
+    mode="{{value.mode}}"
+    value="{{optionValue}}"
+    defaultValue="{{date}}"
+    format="{{_(value.mode)}}"
+    data-type="visible"
+    data-value="{{false}}"
+    bindchange="onChange"
+    bindcancel="changeData"
+  />
+</view>

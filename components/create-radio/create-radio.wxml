@@ -1,0 +1,38 @@
+<view>
+  <t-textarea
+    data-type="title"
+    catch:change="change"
+    label="标题"
+    placeholder="请输入标题"
+    bordered="{{true}}"
+    disableDefaultPadding="{{true}}"
+    focus='{{true}}'
+    style="height: 100px;"
+  />
+  
+  <view class="title">选项</view>
+  <view class="option">
+    <view wx:for="{{list}}">
+      <t-input placeholder="输入选项" data-idx="{{index}}" value="{{item}}" catch:change="inputChange">
+        <t-icon slot="prefix-icon" name="{{deleteIcon}}" size='20px' data-idx="{{index}}" catch:tap="delOption" />
+      </t-input>
+    </view>
+    <view class="add" catch:tap="addOption"><t-icon name="{{addIcon}}" size='22px' style="margin-right: 15px;" />添加选项</view>
+  </view>
+  
+  <view class="title">设置</view>
+  <view class="setup">
+    <t-cell title="切换至{{tip?'多选':'单选'}}题">
+      <t-switch data-type="isSingleChoice" data-value="{{!isSingleChoice}}" catchchange="changeData" default-value="{{false}}" slot="note" />
+    </t-cell>
+    <t-cell title="此题目必须回答">
+      <t-switch data-type="required" catchchange="change" default-value="{{required}}" slot="note" />
+    </t-cell>
+  </view>
+
+  <view class="btn">
+    <t-button theme="light" size="small" catch:tap="back" style="margin-right: 20px;">返回</t-button>
+    <t-button theme="primary" size="small" catch:tap="add">确认</t-button>
+  </view>
+</view>
+<t-toast id="t-toast" />

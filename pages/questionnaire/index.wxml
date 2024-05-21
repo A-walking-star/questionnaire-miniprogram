@@ -1,0 +1,14 @@
+<view class="content">
+  <view wx:for="{{list}}" class="radius-20 shadow list">
+    <radio-card wx:if="{{item.type === 'radio'}}" modify="{{modify}}" val="{{data.data[index]}}" value="{{item.value}}" idx="{{index+1}}" data-idx="{{index}}" catch:change="changeListData" />
+    <text-card wx:elif="{{item.type === 'text'}}" modify="{{modify}}" val="{{data.data[index]}}" value="{{item.value}}" idx="{{index+1}}" data-idx="{{index}}" catch:change="changeListData" />
+    <slider-card wx:elif="{{item.type === 'slider'}}" modify="{{modify}}" val="{{data.data[index]}}" value="{{item.value}}" idx="{{index+1}}" data-idx="{{index}}" catch:change="changeListData" />
+    <rate-card wx:elif="{{item.type === 'rate'}}" modify="{{modify}}" val="{{data.data[index]}}" value="{{item.value}}" idx="{{index+1}}" data-idx="{{index}}" catch:change="changeListData" />
+    <date-time-picker-card wx:elif="{{item.type === 'dateTimePicker'}}" modify="{{modify}}" val="{{data.data[index]}}" value="{{item.value}}" idx="{{index+1}}" data-idx="{{index}}" catch:change="changeListData" />
+  </view>
+</view>
+<view class="btn" wx:if="{{!data.data.length}}">
+  <t-button theme="primary" size="large" block catch:tap="submit">提交</t-button>
+</view>
+<view class="safe-area-inset-bottom-view" />
+<t-toast id="t-toast" />

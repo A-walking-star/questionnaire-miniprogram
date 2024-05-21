@@ -1,0 +1,8 @@
+<view class="content">
+  <view style="{{list.length?'':'display: none;'}}" wx:for="{{list}}" class="radius-20 shadow list">
+    <t-cell title="序号：{{list.length-index}} 提交时间：{{item.date}}" hover arrow data-idx="{{index}}" catch:tap="detail" />
+  </view>
+  <t-empty style="{{!list.length?'':'display: none;'}}" icon="info-circle-filled" description="暂无填写信息" />
+</view>
+<view class="safe-area-inset-bottom-view" />
+<t-toast id="t-toast" />

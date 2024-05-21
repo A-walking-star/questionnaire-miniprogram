@@ -1,0 +1,60 @@
+page{
+  background-color: #f9f9f9;
+}
+
+.content{
+  width: calc(100vw - 64rpx);
+  margin: 32rpx;
+}
+
+.title-textarea{
+  height: 110px;
+}
+
+.list{
+  margin-top: 30rpx;
+}
+
+.add-button{
+  box-sizing: border-box;
+  width: calc(100vw - 64rpx);
+  margin: 32rpx;
+}
+.add-button > button{
+  margin: 0;
+  width: 100%;
+}
+
+.subject-scroll-view{
+  width: 100vw;
+  max-height: 85vh;
+}
+.subject-scroll-view .title{
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20rpx;
+  font-size: 28rpx;
+}
+
+.menu{
+  z-index: 11499;
+  position: fixed;
+  left: 0;
+  bottom: max(env(safe-area-inset-bottom),20rpx);
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  width: calc(100vw - 64rpx);
+  margin: 0 32rpx;
+  padding: 10rpx;
+  background-color: #ffffff;
+}
+
+.radius-20{
+  border-radius: 20rpx;
+  overflow: hidden;
+}
+
+.shadow {
+  box-shadow: 0 0 30rpx 0 rgba(0, 0, 0, 0.1);
+}

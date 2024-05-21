@@ -1,0 +1,28 @@
+page{
+  background-color: #f9f9f9;
+}
+
+.content{
+  width: calc(100vw - 64rpx);
+  margin: 32rpx;
+}
+.list{
+  margin-top: 30rpx;
+}
+
+.btn{
+  width: calc(100vw - 64rpx);
+  margin: 20rpx 32rpx;
+}
+.btn > button{
+  margin: 0;
+  width: 100%;
+}
+.radius-20{
+  border-radius: 20rpx;
+  overflow: hidden;
+}
+
+.shadow {
+  box-shadow: 0 0 30rpx 0 rgba(0, 0, 0, 0.1);
+}

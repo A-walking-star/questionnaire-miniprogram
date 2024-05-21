@@ -1,0 +1,14 @@
+<view>
+  <t-cell t-class-title="text-overflow" title="{{idx?idx+'.':''}}{{value.title}}" required="{{value.required}}">
+    <t-icon wx:if="{{mode==0}}" slot="note" name="{{delIcon}}" size="48rpx" catch:tap="del" />
+  </t-cell>
+  <t-textarea
+    class="input"
+    data-type="title"
+    catch:change="onChange"
+    bordered="{{true}}"
+    value="{{optionValue}}"
+    disableDefaultPadding="{{true}}"
+    disabled="{{mode!==1}}"
+  />
+</view>

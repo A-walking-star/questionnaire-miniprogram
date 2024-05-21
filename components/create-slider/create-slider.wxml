@@ -1,0 +1,32 @@
+<view>
+  <t-textarea
+    data-type="title"
+    catch:change="change"
+    label="标题"
+    placeholder="请输入标题"
+    bordered="{{true}}"
+    disableDefaultPadding="{{true}}"
+    focus='{{true}}'
+    style="height: 100px;"
+  />
+  <view class="title">滑动范围</view>
+  <view class="setup">
+    <t-input label="最小数值" value="{{min}}" type="number" data-type="min" catch:change="change" align="right" />
+    <t-input label="最小数值显示文本" value="{{minText}}" data-type="minText" catch:change="change" align="right" />
+    <t-input label="最大数值" value="{{max}}" type="number" data-type="max" catch:change="change" align="right" />
+    <t-input label="最大数值显示文本" value="{{maxText}}" data-type="maxText" catch:change="change" align="right" />
+  </view>
+  
+  <view class="title">设置</view>
+  <view class="setup">
+    <t-cell title="此题目必须回答">
+      <t-switch data-type="required" catchchange="change" default-value="{{required}}" slot="note" />
+    </t-cell>
+  </view>
+
+  <view class="btn">
+    <t-button theme="light" size="small" catch:tap="back" style="margin-right: 20px;">返回</t-button>
+    <t-button theme="primary" size="small" catch:tap="add">确认</t-button>
+  </view>
+</view>
+<t-toast id="t-toast" />

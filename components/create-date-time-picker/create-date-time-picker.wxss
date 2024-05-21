@@ -1,0 +1,17 @@
+
+.title{
+  padding: 10rpx 32rpx;
+  font-size: 24rpx;
+}
+
+.setup{
+  background-color: #ffffff;
+}
+
+.btn{
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  width: calc(100vw - 64rpx);
+  margin: 32rpx;
+}

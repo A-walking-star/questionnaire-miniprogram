@@ -1,0 +1,20 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/create-questionnaire/index",
+    "pages/questionnaire/index",
+    "pages/list/index"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "问卷",
+    "navigationBarBackgroundColor": "#ffffff"
+  },
+  "usingComponents": {
+    "t-toast": "tdesign-miniprogram/toast/toast"
+  },
+  "style": "v2",
+  "componentFramework": "glass-easel",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

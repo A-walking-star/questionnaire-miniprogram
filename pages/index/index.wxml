@@ -1,0 +1,21 @@
+<t-navbar class="custom-navbar" title="问卷">
+  <t-icon style="{{list.length?'':'display: none;'}}" slot="left" name="{{leftTopLogo}}" size="48rpx" catch:tap="clearStorage" />
+</t-navbar>
+<view class="history-box">
+  <view style="{{list.length?'':'display: none;'}}" wx:for="{{list}}" class="history" data-idx="{{index}}" catch:tap="select">
+    <view class="title">
+      <view class="text-overflow">{{item.title}}</view>
+      <view class="text-overflow date">{{item.date?'创建时间：'+item.dateText:''}}</view>
+    </view>
+    <t-divider layout="vertical" t-class="divider" />
+    <view class="num">
+      <view>{{data[item.id].length}}</view>
+      <view>问卷数量</view>
+    </view>
+  </view>
+  <t-empty style="{{!list.length?'':'display: none;'}}" icon="info-circle-filled" description="暂无问卷" />
+</view>
+<view class="safe-area-inset-bottom-view" />
+<t-action-sheet id="t-action-sheet" t-class="action-sheet" usingCustomNavbar bind:selected="handleSelected" />
+<t-fab icon="add" data-url='../create-questionnaire/index' bind:click="navTo" aria-label="增加" draggable="{{true}}"></t-fab>
+<t-toast id="t-toast" />

@@ -1,0 +1,72 @@
+
+<view class="content">
+  <t-textarea
+    t-class="title-textarea radius-20 shadow"
+    label="问卷标题"
+    placeholder="请输入您的问卷的标题"
+    value="{{title}}"
+    disableDefaultPadding="{{true}}"
+    focus='{{true}}'
+    data-type="title"
+    catch:change="change"
+    maxcharacter="{{24}}"
+    indicator="{{true}}"
+  />
+  <view wx:for="{{list}}" class="radius-20 shadow list">
+    <radio-card wx:if="{{item.type === 'radio'}}" mode="{{0}}" value="{{item.value}}" idx="{{index+1}}" data-idx="{{index}}" catch:del="del" />
+    <text-card wx:elif="{{item.type === 'text'}}" mode="{{0}}" value="{{item.value}}" idx="{{index+1}}" data-idx="{{index}}" catch:del="del" />
+    <slider-card wx:elif="{{item.type === 'slider'}}" mode="{{0}}" value="{{item.value}}" idx="{{index+1}}" data-idx="{{index}}" catch:del="del" />
+    <rate-card wx:elif="{{item.type === 'rate'}}" mode="{{0}}" value="{{item.value}}" idx="{{index+1}}" data-idx="{{index}}" catch:del="del" />
+    <date-time-picker-card wx:elif="{{item.type === 'dateTimePicker'}}" mode="{{0}}" value="{{item.value}}" idx="{{index+1}}" data-idx="{{index}}" catch:del="del" />
+  </view>
+</view>
+
+<view class="add-button">
+  <t-button theme="primary" size="large" block data-type="addVisiblePopup" data-value="{{true}}" catch:tap="changeData">添加题目</t-button>
+</view>
+
+<view style="height: calc(90rpx + max(env(safe-area-inset-bottom), 20rpx));" />
+<view class="menu radius-20 shadow">
+  <t-button theme="primary" size="small" data-type="addVisiblePopup" data-value="{{true}}" catch:tap="changeData">添加题目</t-button>
+  <t-button theme="primary" size="small" catch:tap="save" style="margin-left: 10px;">保存问卷</t-button>
+</view>
+
+<t-popup style="background-color: #f9f9f9;padding-top: 32rpx;" visible="{{addVisiblePopup}}" data-type="addVisiblePopup" data-value="{{false}}" bind:visible-change="changeData" placement="bottom">
+  <t-grid column="{{3}}" theme="card" class="shadow">
+    <t-grid-item wx:for="{{typeGrid}}" text="{{item.name}}" icon="{{ { name: item.icon, size: '70%' } }}" data-idx="{{index}}" catch:tap="typeGridTap" />
+  </t-grid>
+  <view class="add-button">
+    <t-button theme="primary" size="small" block data-type="addVisiblePopup" data-value="{{false}}" catch:tap="changeData">返回</t-button>
+  </view>
+</t-popup>
+<t-popup style="background-color: #f9f9f9;padding-top: 32rpx;" visible="{{subjectVisiblePopup}}" data-type="subjectVisiblePopup" data-value="{{false}}" bind:visible-change="changeData" placement="bottom">
+  <scroll-view 	scroll-y="{{true}}" class="subject-scroll-view">
+    <wxs module="_">
+      function getName(type) {
+        switch(type){
+          case 'radio':
+            return '单选';
+          case 'checkbox':
+            return '多选';
+          case 'text':
+            return '填空';
+          case 'slider':
+            return '滑动条';
+          case 'rate':
+            return '打分';
+          case 'dateTimePicker':
+            return '日期';
+        }
+      }
+      module.exports = getName;
+    </wxs>
+    <view class="title">{{_(subjectType)}}</view>
+    <create-radio wx:if="{{subjectType=='radio'}}" data-type="subjectVisiblePopup" data-value="{{false}}" catch:back="changeData" catch:add="addSubject" />
+    <create-radio wx:elif="{{subjectType=='checkbox'}}" isSingleChoice="{{false}}" data-type="subjectVisiblePopup" data-value="{{false}}" catch:back="changeData" catch:add="addSubject" />
+    <create-text wx:elif="{{subjectType=='text'}}" data-type="subjectVisiblePopup" data-value="{{false}}" catch:back="changeData" catch:add="addSubject" />
+    <create-slider wx:elif="{{subjectType=='slider'}}" data-type="subjectVisiblePopup" data-value="{{false}}" catch:back="changeData" catch:add="addSubject" />
+    <create-rate wx:elif="{{subjectType=='rate'}}" data-type="subjectVisiblePopup" data-value="{{false}}" catch:back="changeData" catch:add="addSubject" />
+    <create-date-time-picker wx:elif="{{subjectType=='dateTimePicker'}}" data-type="subjectVisiblePopup" data-value="{{false}}" catch:back="changeData" catch:add="addSubject" />
+  </scroll-view>
+</t-popup>
+<t-toast id="t-toast" />

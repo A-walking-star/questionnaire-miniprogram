@@ -1,0 +1,13 @@
+.text-overflow {
+  width: 100%;
+  /* display: -webkit-box !important; */
+  overflow: hidden !important;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+.safe-area-inset-bottom-view{
+  height: max(env(safe-area-inset-bottom), 30rpx);
+}

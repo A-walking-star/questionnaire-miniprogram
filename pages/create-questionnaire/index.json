@@ -1,0 +1,21 @@
+{
+  "navigationBarBackgroundColor": "#f9f9f9",
+  "navigationBarTitleText": "编辑调查",
+  "usingComponents": {
+    "t-textarea": "tdesign-miniprogram/textarea/textarea",
+    "t-grid": "tdesign-miniprogram/grid/grid",
+    "t-grid-item": "tdesign-miniprogram/grid-item/grid-item",
+    "t-popup": "tdesign-miniprogram/popup/popup",
+    "t-button": "tdesign-miniprogram/button/button",
+    "create-radio": "/components/create-radio/create-radio",
+    "create-text": "/components/create-text/create-text",
+    "create-date-time-picker": "/components/create-date-time-picker/create-date-time-picker",
+    "create-rate": "/components/create-rate/create-rate",
+    "create-slider": "/components/create-slider/create-slider",
+    "radio-card": "/components/radio-card/radio-card",
+    "text-card": "/components/text-card/text-card",
+    "slider-card": "/components/slider-card/slider-card",
+    "rate-card": "/components/rate-card/rate-card",
+    "date-time-picker-card": "/components/date-time-picker-card/date-time-picker-card"
+  }
+}

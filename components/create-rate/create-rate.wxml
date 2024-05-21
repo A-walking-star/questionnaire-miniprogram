@@ -1,0 +1,39 @@
+<view>
+  <t-textarea
+    data-type="title"
+    catch:change="change"
+    label="标题"
+    placeholder="请输入标题"
+    bordered="{{true}}"
+    disableDefaultPadding="{{true}}"
+    focus='{{true}}'
+    style="height: 100px;"
+  />
+  
+  <view class="title">设置</view>
+  <view class="setup">
+    <t-cell title="分数设置" note="{{value}}" arrow catch:tap="changeData" data-type="visible" data-value="{{true}}" />
+    <t-cell title="此题目必须回答">
+      <t-switch data-type="required" catchchange="change" default-value="{{required}}" slot="note" />
+    </t-cell>
+  </view>
+
+  <view class="btn">
+    <t-button theme="light" size="small" catch:tap="back" style="margin-right: 20px;">返回</t-button>
+    <t-button theme="primary" size="small" catch:tap="add">确认</t-button>
+  </view>
+</view>
+<t-picker
+  visible="{{visible}}"
+  value="{{ value }}"
+  title="选择分数"
+  cancelBtn="取消"
+  confirmBtn="确认"
+  data-type="visible"
+  data-value="{{false}}"
+  catchchange="onPickerChange"
+  catchcancel="changeData"
+>
+  <t-picker-item options="{{options}}" />
+</t-picker>
+<t-toast id="t-toast" />
